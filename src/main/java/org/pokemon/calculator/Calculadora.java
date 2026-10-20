@@ -3,6 +3,7 @@ package org.pokemon.calculator;
 import org.pokemon.models.Pokemon;
 import org.pokemon.services.FileService;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -10,6 +11,8 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Calculadora {
     FileService fs = new FileService();
     List<Pokemon> pokemons = fs.cargarJSON("pokemon.json");
+
+    // INFORME DE POKEMON
 
     public int calcularTotal(){
         int total = 0;
@@ -55,5 +58,23 @@ public class Calculadora {
             }
         }
         return pokemonMasPS + "(" + mayor + ")";
+    }
+
+    // POKEMON POR TIPO
+
+    public HashMap<String, Integer> totalTipo() {
+        HashMap<String, Integer> mapTipo = new HashMap<>();
+
+        for (Pokemon pokemon : pokemons) {
+            String tipo = pokemon.tipo();
+
+            if (mapTipo.containsKey(tipo)) {
+                mapTipo.put(tipo, mapTipo.get(tipo) + 1);
+            } else {
+                mapTipo.put(tipo, 1);
+            }
+        }
+
+        return mapTipo;
     }
 }
