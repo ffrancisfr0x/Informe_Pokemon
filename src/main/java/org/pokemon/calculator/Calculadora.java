@@ -35,6 +35,14 @@ public class Calculadora {
         return total / pokemons.size();
     }
 
+    public int psMedio(){
+        int total = 0;
+        for (Pokemon pokemon : pokemons) {
+            total += pokemon.ps();
+        }
+        return total / pokemons.size();
+    }
+
     public String pokemonMayorNivel(){
         int mayor = 0;
         String pokemonMayorNivel = "";
