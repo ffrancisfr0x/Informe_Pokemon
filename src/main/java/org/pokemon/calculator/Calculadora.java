@@ -3,6 +3,7 @@ package org.pokemon.calculator;
 import org.pokemon.models.Pokemon;
 import org.pokemon.services.FileService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -73,6 +74,24 @@ public class Calculadora {
             } else {
                 mapTipo.put(tipo, 1);
             }
+        }
+
+        return mapTipo;
+    }
+
+    public HashMap<String, List<String>> pokemonPorTipo() {
+
+        HashMap<String, List<String>> mapTipo = new HashMap<>();
+
+        for (Pokemon pokemon : pokemons) {
+
+            String tipo = pokemon.tipo();
+
+            if (!mapTipo.containsKey(tipo)) {
+                mapTipo.put(tipo, new ArrayList<>());
+            }
+
+            mapTipo.get(tipo).add(pokemon.nombre());
         }
 
         return mapTipo;
