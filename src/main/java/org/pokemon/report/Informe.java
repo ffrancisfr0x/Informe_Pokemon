@@ -18,4 +18,30 @@ public class Informe {
 
         return informePokemon + totalPokemon + nivelMedio + psMedio + mayorNivel + masPS;
     }
+
+    public String pokemonPorTipo() {
+
+        Calculadora calc = new Calculadora();
+
+        var cantidades = calc.totalTipo();
+        var nombres = calc.pokemonPorTipo();
+
+        String informeTipo =
+                "=============================\n" +
+                        "POKEMON POR TIPO\n" +
+                        "=============================\n";
+
+        for (var entrada : cantidades.entrySet()) {
+
+            String tipo = entrada.getKey();
+
+            informeTipo += "\n" + tipo + ": " + entrada.getValue() + "\n";
+
+            for (String nombre : nombres.get(tipo)) {
+                informeTipo += nombre + "\n";
+            }
+        }
+
+        return informeTipo;
+    }
 }
