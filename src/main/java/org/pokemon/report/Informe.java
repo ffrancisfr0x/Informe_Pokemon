@@ -12,8 +12,10 @@ public class Informe {
 
         String totalPokemon = "\nTotal de Pokémon:" + calc.calcularTotal();
         String nivelMedio = "\nNivel medio:" + calc.nivelMedio();
-        String psMedio = "\nPS medios:" + calc.();
-        String totalPokemon = "\nTotal de Pokémon:" + calc.calcularTotal();
+        String psMedio = "\nPS medios:" + calc.psMedio();
+        String mayorNivel = "\nPokemon con mayor nivel:" + calc.pokemonMayorNivel();
+        String masPS = "\nPokemon con mas PS:" + calc.pokemonMasPS();
 
+        return informePokemon + totalPokemon + nivelMedio + psMedio + mayorNivel + masPS;
     }
 }
