@@ -7,8 +7,8 @@ public class Informe {
         Calculadora calc = new Calculadora();
 
         String informePokemon = "=============================" +
-                "INFORME DE POKEMON" +
-                "=============================\n";
+                "\nINFORME DE POKEMON" +
+                "\n=============================\n";
 
         String totalPokemon = "\nTotal de Pokémon: " + calc.calcularTotal();
         String nivelMedio = "\nNivel medio: " + calc.nivelMedio();
@@ -16,7 +16,7 @@ public class Informe {
         String mayorNivel = "\nPokemon con mayor nivel: " + calc.pokemonMayorNivel();
         String masPS = "\nPokemon con mas PS: " + calc.pokemonMasPS();
 
-        return informePokemon + totalPokemon + nivelMedio + psMedio + mayorNivel + masPS;
+        return informePokemon + totalPokemon + nivelMedio + psMedio + mayorNivel + masPS + "\n\n";
     }
 
     public String pokemonPorTipo() {
@@ -27,9 +27,9 @@ public class Informe {
         var nombres = calc.pokemonPorTipo();
 
         String informeTipo =
-                "=============================\n" +
-                        "POKEMON POR TIPO\n" +
-                        "=============================\n";
+                "\n=============================\n" +
+                        "\nPOKEMON POR TIPO" +
+                        "\n=============================\n";
 
         for (var entrada : cantidades.entrySet()) {
 
