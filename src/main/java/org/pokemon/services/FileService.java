@@ -28,7 +28,7 @@ public class FileService {
         Informe informe = new Informe();
 
         try (var bfr = new BufferedWriter(new FileWriter("pokemon.txt"))) {
-            String salida = informe.informePokemon() + informe.informePokemon();
+            String salida = informe.informePokemon() + informe.pokemonPorTipo();
             bfr.write(salida);
         } catch (IOException e) {
             e.printStackTrace();
