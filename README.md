@@ -145,3 +145,6 @@ NORMAL: 2
 Rattata
 Raticate
 ```
+## Autor
+
+Francis Romero Flores
