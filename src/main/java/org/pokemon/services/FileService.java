@@ -1,6 +1,7 @@
 package org.pokemon.services;
 
 import org.pokemon.models.Pokemon;
+import org.pokemon.report.Informe;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
 
@@ -24,8 +25,11 @@ public class FileService {
     }
 
     public void guardarArchivoTxt() {
+        Informe informe = new Informe();
+
         try (var bfr = new BufferedWriter(new FileWriter("pokemon.txt"))) {
-            bfr.write("");
+            String salida = informe.informePokemon() + informe.informePokemon();
+            bfr.write(salida);
         } catch (IOException e) {
             e.printStackTrace();
         }
